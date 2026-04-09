@@ -1,0 +1,146 @@
+/* ============================================
+   SEAL MINT – полная тема для Firefox
+   Мятное стекло + голубые иконки
+   ============================================ */
+
+/* === ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ === */
+:root {
+    /* Мятное стекло (панели, вкладки, ховеры) */
+    --glass-mint: rgba(152, 255, 204, 0.25) !important;
+    /* Затемнённое меню (читаемое, но прозрачное) */
+    --menu-dark: rgba(100, 200, 150, 0.35) !important;
+    /* Голубые иконки */
+    --icon-blue: #7FCCFF !important;
+
+    --blur-val: blur(20px) !important;
+    --sidebar-width: 240px !important;
+
+    scrollbar-color: var(--menu-dark) transparent !important;
+    scrollbar-width: thin !important;
+}
+
+/* === ВЕРХНИЕ ПАНЕЛИ (МЯТНОЕ СТЕКЛО) === */
+#nav-bar,
+#PersonalToolbar,
+#TabsToolbar {
+    background-color: var(--glass-mint) !important;
+    backdrop-filter: var(--blur-val) !important;
+    border: none !important;
+}
+
+#urlbar-background {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid var(--menu-dark) !important;
+}
+
+/* === ГОЛУБЫЕ ИКОНКИ (КНОПКИ, НАВИГАЦИЯ) === */
+.toolbarbutton-1,
+.toolbarbutton-icon,
+.navigation-stack {
+    fill: var(--icon-blue) !important;
+    color: var(--icon-blue) !important;
+}
+
+.toolbarbutton-1:hover {
+    background-color: var(--glass-mint) !important;
+}
+
+/* === БОКОВАЯ ПАНЕЛЬ (ШИРЕ + СТЕКЛО) === */
+#sidebar-box,
+#sidebar,
+#tabbrowser-tabs[vertical] {
+    min-width: var(--sidebar-width) !important;
+    max-width: var(--sidebar-width) !important;
+    width: var(--sidebar-width) !important;
+    background-color: var(--glass-mint) !important;
+    backdrop-filter: var(--blur-val) !important;
+    border: none !important;
+}
+
+/* === КОНТЕКСТНОЕ МЕНЮ (МЯГКОЕ, БЕЗ ОБВОДКИ) === */
+menupopup,
+panel {
+    --panel-background: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.panel-arrowcontent,
+#unified-extensions-view,
+menupopup,
+#contentAreaContextMenu {
+    background-color: var(--menu-dark) !important;
+    backdrop-filter: var(--blur-val) !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Текст в меню */
+menupopup menuitem,
+menupopup menu {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+menupopup menuitem:hover,
+menupopup menu:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 4px;
+}
+
+/* === ВЫДЕЛЕНИЕ ТЕКСТА === */
+::selection {
+    background-color: var(--menu-dark) !important;
+    color: #fff !important;
+}
+
+/* === УБИРАЕМ ЛИШНИЕ ФОНЫ У КНОПОК === */
+toolbarbutton.toolbarbutton-1,
+.toolbarbutton-icon,
+.toolbarbutton-badge-stack,
+#nav-bar toolbarbutton {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    appearance: none !important;
+}
+
+.toolbarbutton-icon {
+    fill: var(--icon-blue) !important;
+}
+
+toolbarbutton.toolbarbutton-1:hover,
+#nav-bar toolbarbutton:hover {
+    background-color: var(--glass-mint) !important;
+    border-radius: 6px !important;
+}
+
+/* === ВКЛАДКИ (МЯТНЫЙ ХОВЕР И АКТИВНАЯ) === */
+.tabbrowser-tab:hover .tab-background {
+    background-color: var(--glass-mint) !important;
+    border-radius: 6px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background,
+.tabbrowser-tab[visuallyselected="true"] .tab-background {
+    background-color: var(--glass-mint) !important;
+    border-radius: 6px !important;
+    outline: none !important;
+}
+
+/* Убираем синюю полоску сверху активной вкладки */
+.tabbrowser-tab[selected="true"] .tab-line,
+.tabbrowser-tab[visuallyselected="true"] .tab-line {
+    background-color: transparent !important;
+}
+
+/* Фавиконки без фона */
+.tab-icon-image {
+    background: transparent !important;
+    opacity: 0.9;
+}
